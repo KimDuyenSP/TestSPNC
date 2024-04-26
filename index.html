@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  </head>
+  <body>
+    <div id="app">
+      <div id="all">
+      <div id="top">
+        <h1 id="title">Mô phỏng thuật toán tìm kiếm tuyến tính</h1>
+      </div>
+      <div id="container">
+        <div id="game"></div>
+        <div id="code-container">
+            <p>function linearSearch(array, value) {</p>
+            <p class="code code-1" style="padding-left: 16px">for (let i = 0; i < array.length; i++) {</p>
+            <p class="code code-2" style="padding-left: 32px">if (array[i] === value) {</p>
+            <p class="code code-3" style="padding-left: 48px">return i; // Giá trị được tìm thấy</p>
+            <p class="code code-2" style="padding-left: 32px">}</p>
+            <p class="code code-1" style="padding-left: 16px">}</p>
+            <p class="code code-4" style="padding-left: 16px">return -1; // Giá trị không được tìm thấy</p>
+            <p>}</p>
+          </div>
+      </div>
+      <div id="control">
+        <div id="sub-control">
+          <p class="text-control">Điền các số</p>
+          <input
+            id="control-input"
+            placeholder="Numbers, splited by commas, min 1, max 100"
+            value="12, 24, 31, 88, 54, 47, 66, 92, 99, 100, 1, 5, 33, 40, 50, 70, 20"
+          />
+        </div>
+        <div id="sub-control-2">
+          <p class="text-control">Số cần tìm</p>
+          <input id="control-input-2" placeholder="Value" value="1" />
+        </div>
+        <button>Start</button>
+      </div>
+      <div id="info-overlay" class="overlay" style="display:none;">
+        <div class="info-panel">
+            <button class="close-button">Đóng</button>
+            <div class="content-container">
+                
+                <div class="content-section">
+                    <h2>Hướng dẫn sử dụng</h2>
+                    <ul>
+                        <li>Nhập danh sách giá trị các số vào ô "Điền các số". Các số cần được phân tách bởi dấu phẩy.</li>
+                        <li>Nhập giá trị cần tìm vào ô "Số cần tìm".</li>
+                        <li>Ấn nút "Start" để bắt đầu quá trình tìm kiếm.</li>
+                        <li>Quá trình tìm kiếm sẽ được mô phỏng trực quan trên màn hình, cho phép quan sát từng bước của thuật toán.</li>
+                    </ul>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="content-section">
+                    <h2>Giải thích thuật toán tìm kiếm tuần tự</h2>
+                    <p>Linear Search là một thuật toán tìm kiếm đơn giản, trong đó danh sách được duyệt tuần tự để tìm giá trị cần tìm. Tại mỗi bước, thuật toán so sánh giá trị cần tìm với giá trị tại vị trí hiện tại trong danh sách.</p>
+                    <p>Nếu giá trị được tìm thấy, thuật toán trả về vị trí của giá trị đó trong danh sách. Nếu không tìm thấy giá trị sau khi đã kiểm tra toàn bộ danh sách, thuật toán trả về -1.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="info-button" class="usage-button">Thông tin chi tiết</button>
+      </div>
+    </div>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.60.0/phaser.min.js"
+    ></script>
+    <script defer src="js/game-scene.js"></script>
+    <script defer src="js/setup-game.js"></script>
+    <script defer src="js/setup-control.js"></script>
+    <script defer src="js/index.js"></script>
+  </body>
+</html>
